@@ -1,15 +1,27 @@
-var randomNumber1 = Math.floor(Math.random()*6) +1;
-var randomNumber2 = Math.floor(Math.random()*6) +1;
-var source1 = "images/dice" + randomNumber1 + ".png";
-var source2 = "images/dice" + randomNumber2 + ".png";
+var possibleDos = [
+  "吃饭，睡觉，打豆豆",
+  "出门戴口罩",
+  "躺在沙发上吃蚕豆",
+  "吃五仁月饼",
+  "吃榴莲月饼",
+  "看恐怖片",
+  "吃葡萄不吐葡萄皮",
+  "打扫房间",
+  "洗澡时唱洗刷刷"];
+var possibleDonts = [
+  "吃饭，睡觉，打豆豆",
+  "吃五仁月饼",
+  "吃榴莲月饼",
+  "看恐怖片",
+  "不吃葡萄倒吐葡萄皮",
+  "打扫房间",
+  "洗澡时唱洗刷刷",
+  "减肥",
+  "坐马桶刷手机",
+  "相信黄历"];
 
-document.querySelector("#player1Dice").setAttribute("src",source1);
-document.querySelector("#player2Dice").setAttribute("src",source2);
+var randomNumber1 = Math.floor(Math.random()*possibleDos.length);
+var randomNumber2 = Math.floor(Math.random()*possibleDonts.length);
 
-if(randomNumber1>randomNumber2){
-  document.querySelector("h1").innerHTML = "🚩Player 1 Wins!";
-}else if(randomNumber1<randomNumber2){
-  document.querySelector("h1").innerHTML = "Player 2 Wins!🚩";
-}else{
-  document.querySelector("h1").innerHTML = "Draw!";
-}
+document.querySelector("#do").innerHTML = "宜：" + possibleDos[randomNumber1];
+document.querySelector("#dont").innerHTML = "不宜：" + possibleDonts[randomNumber2];
