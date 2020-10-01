@@ -23,5 +23,9 @@ var possibleDonts = [
 var randomNumber1 = Math.floor(Math.random()*possibleDos.length);
 var randomNumber2 = Math.floor(Math.random()*possibleDonts.length);
 
+while(possibleDonts[randomNumber2] == possibleDos[randomNumber1]){
+  randomNumber2 = Math.floor(Math.random()*possibleDonts.length);
+}
+
 document.querySelector("#do").innerHTML = "宜：" + possibleDos[randomNumber1];
 document.querySelector("#dont").innerHTML = "不宜：" + possibleDonts[randomNumber2];
