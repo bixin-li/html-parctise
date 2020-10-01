@@ -30,6 +30,14 @@ var theNumber = Number(theDate.slice(0,4).join("")) / Number(theDate.slice(6,8).
 var seed1 = (theNumber / (animalSign * 4 + 240))%10;
 var seed2 = (theNumber / (zodiacSign * 7 + 320))%10;
 
+while(seed1>1){
+  seed1 /= 10;
+}
+
+while(seed2>1){
+  seed2 /= 10;
+}
+
 var number1 = Math.floor(seed1*possibleDos.length);
 var number2 = Math.floor(seed2*possibleDonts.length);
 
