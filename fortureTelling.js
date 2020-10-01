@@ -30,8 +30,8 @@ var zodiacSign = localStorage.getItem("zodiacSign");
 
 var theNumber = (theYear-2000)*365 + theMonth*30+ theDay;
 
-var seed1 = ((theNumber + zodiacSign) / (animalSign * 10 / 12))%10;
-var seed2 = ((theNumber + animalSign) / (zodiacSign * 10 / 12))%10;
+var seed1 = ((theNumber + zodiacSign) / (animalSign / 13))%10;
+var seed2 = ((theNumber + animalSign) / (zodiacSign / 13))%10;
 
 while(seed1>1){
   seed1 /= 10;
