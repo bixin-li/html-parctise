@@ -6,16 +6,32 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>今日黄历</h1>
-    <hr>
-
-    <h3 id="do">宜：</h3>
-    <h3 id="dont">不宜：</h3>
-
+    <div class="container">
+      <h2>今日黄历</h2>
+      <hr>
+      <label for="theDate">请选择今天的日期:</label>
+      <input type="date">
+      <br>
+      <label for="animal">请选择你的生肖：</label>
+      <select name="animal" id="animal">
+          <option value="1">鼠</option>
+          <option value="2">牛</option>
+          <option value="3">虎</option>
+          <option value="4">兔</option>
+      </select>
+      <br>
+      <br>
+      <label for="zodiac">请选择你的星座：</label>
+      <select name="zodiac" id="zodiac">
+          <option value="1">白羊座</option>
+          <option value="2">金牛座</option>
+          <option value="3">双子座</option>
+          <option value="4">巨蟹座</option>
+      </select>
+      <br>
+      <br>
+      <a href="fortureTelling.html"><button>查看今日黄历</button></a>
+    </div>
     <script src="index.js" charset="utf-8"></script>
-    <br>
   </body>
-  <footer>
-    本黄历内容由Summer倾情提供
-  </footer>
 </html>

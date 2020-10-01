@@ -18,7 +18,8 @@ var possibleDonts = [
   "洗澡时唱洗刷刷",
   "减肥",
   "坐马桶刷手机",
-  "相信黄历"];
+  "相信黄历",
+  "想买莲蓉月饼却错买成榴莲月饼"];
 
 var randomNumber1 = Math.floor(Math.random()*possibleDos.length);
 var randomNumber2 = Math.floor(Math.random()*possibleDonts.length);
