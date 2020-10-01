@@ -7,7 +7,8 @@ var possibleDos = [
   "看恐怖片",
   "吃葡萄不吐葡萄皮",
   "打扫房间",
-  "洗澡时唱洗刷刷"];
+  "洗澡时唱洗刷刷",
+  "睡懒觉"];
 var possibleDonts = [
   "吃饭，睡觉，打豆豆",
   "吃五仁月饼",
@@ -19,7 +20,8 @@ var possibleDonts = [
   "减肥",
   "坐马桶刷手机",
   "相信黄历",
-  "想买莲蓉月饼却错买成榴莲月饼"];
+  "想买莲蓉月饼却错买成榴莲月饼",
+  "熬夜"];
 
 var theDate = localStorage.getItem("theDate").match(/\d/g);
 var theYear = Number(theDate.slice(0,4).join(""));
@@ -30,8 +32,8 @@ var zodiacSign = localStorage.getItem("zodiacSign");
 
 var theNumber = (theYear-2000)*365 + theMonth*30+ theDay;
 
-var seed1 = ((theNumber + zodiacSign) / (animalSign / 13))%10;
-var seed2 = ((theNumber + animalSign) / (zodiacSign / 13))%10;
+var seed1 = ((theNumber + animalSign) * (animalSign / 13) * ((12-zodiacSign)/12))%10;
+var seed2 = ((theNumber + zodiacSign) * (zodiacSign / 13) * ((12-animalSign)/12))%10;
 
 while(seed1>1){
   seed1 /= 10;
