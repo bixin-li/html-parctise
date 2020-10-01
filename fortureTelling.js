@@ -22,13 +22,16 @@ var possibleDonts = [
   "想买莲蓉月饼却错买成榴莲月饼"];
 
 var theDate = localStorage.getItem("theDate").match(/\d/g);
+var theYear = Number(theDate.slice(0,4).join(""));
+var theMonth = Number(theDate.slice(4,6).join(""));
+var theDay = Number(theDate.slice(6,8).join(""));
 var animalSign = localStorage.getItem("animalSign");
 var zodiacSign = localStorage.getItem("zodiacSign");
 
-var theNumber = Number(theDate.slice(0,4).join("")) / Number(theDate.slice(6,8).join("")) / Number(theDate.slice(4,6).join(""));
+var theNumber = (theYear-2000)*365 + theMonth*30+ theDay;
 
-var seed1 = (theNumber / (animalSign * 4 + 240))%10;
-var seed2 = (theNumber / (zodiacSign * 7 + 320))%10;
+var seed1 = ((theNumber + zodiacSign) / (animalSign * 10 / 12))%10;
+var seed2 = ((theNumber + animalSign) / (zodiacSign * 10 / 12))%10;
 
 while(seed1>1){
   seed1 /= 10;
