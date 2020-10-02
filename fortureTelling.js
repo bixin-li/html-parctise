@@ -8,7 +8,14 @@ var possibleDos = [
   "吃葡萄不吐葡萄皮",
   "打扫房间",
   "洗澡时唱洗刷刷",
-  "睡懒觉"];
+  "睡懒觉",
+  "睡到自然醒",
+  "吃大蒜",
+  "视频通话",
+  "发呆",
+  "叫外卖",
+  "相信黄历",
+  "吸猫"];
 var possibleDonts = [
   "吃饭，睡觉，打豆豆",
   "吃五仁月饼",
@@ -21,7 +28,12 @@ var possibleDonts = [
   "坐马桶刷手机",
   "相信黄历",
   "想买莲蓉月饼却错买成榴莲月饼",
-  "熬夜"];
+  "熬夜",
+  "睡到自然醒",
+  "吃大蒜",
+  "发呆",
+  "叫外卖",
+  "怀旧"];
 
 var theDate = localStorage.getItem("theDate").match(/\d/g);
 var theYear = Number(theDate.slice(0,4).join(""));
